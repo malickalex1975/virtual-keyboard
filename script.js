@@ -110,3 +110,158 @@ for (let i=0;i<64;i++){
   btn.textContent=keys[i];
   keyboard.append(btn);
 }
+const realKeyDown = (code,e) =>{
+    if(!keyCodes.includes(code)){return}; // if the key doesn't present on the virtual keyboard it doesn't work.
+    let keyNumber=keyCodes.indexOf(code);
+    if(e.shiftKey  && e.altKey){setTimeout( ()=> changeLanguage(),10)}
+    if(e.shiftKey  && !e.altKey){shiftDown();}
+    if (code=="CapsLock"){pressedCapsLock();}
+    if (code=="ShiftLeft" || code=="ShiftRight"){shiftDown()};
+    if (code=="Backspace"){backspaceDown()};
+    if (code=="Enter"){enterDown()};
+    if (code=="Tab"){tabDown()};
+    keyDownAnimation(keyNumber);
+    print(keyNumber); 
+  }
+  
+    const realKeyUp = (code,e) =>{
+    if(!keyCodes.includes(code)){return}
+    let keyNumber=keyCodes.indexOf(code);
+    if(e.key=="Shift" ){shiftUp();}
+    keyUpAnimation(keyNumber);
+  }
+    const virtualKeyDown = code =>{
+    keyDownAnimation(code);
+    if (code==42 || code==54){shiftDown()};
+    if (code==29){pressedCapsLock()};
+    if (code==13){backspaceDown()};
+    if (code==41){enterDown()};
+    if (code==14){tabDown()};
+    print(code);
+  }
+  
+    const virtualKeyUp = code =>{
+    keyUpAnimation(code);
+    if (code==42 || code==54){shiftUp()}
+  }
+  
+  
+  
+    const shiftDown = () =>{
+    flagShiftDown=true;
+    (lang=="ENG" )?((capsLock)?keys=keys7:keys=keys3): ((capsLock)?keys=keys8:keys=keys4) ;
+    updateKeys();
+  }
+    const shiftUp=()=>{
+    if (flagShiftDown){
+      (lang=="ENG" )?((capsLock)?keys=keys5:keys=keys1): ((capsLock)?keys=keys6:keys=keys2) ;
+    updateKeys();
+    flagShiftDown=false;
+    }
+  }
+  
+    const keyDownAnimation = i =>{
+  
+    let btn= document.getElementById(`key-${i}`);
+    btn.style.backgroundImage="linear-gradient( #bbeb11,  #354206)";
+    btn.style.transform="translateY(0px)  scale(.97)";
+  }
+  
+    const keyUpAnimation = i =>{
+  
+    let btn= document.getElementById(`key-${i}`);
+    if ([13,14,28,29,40,41,42,52,53,54,55,56,57,59,60,61,62,63].includes(i)){
+      btn.style.backgroundImage="linear-gradient( #555555,  #000000)";
+    }else{
+           btn.style.backgroundImage="linear-gradient( #888888,  #222222)"
+          }
+  
+           btn.style.transform="";
+           btn.style.backgroundImage="";       
+  }
+  
+     const print = i =>{
+    let symb;
+    (keys[i].length>1)  ?  symb='' :  symb=keys[i];
+    input.value+=symb;
+    if(symb!=""){cloudUp(symb)}
+  }
+  
+    const changeLanguage = () =>{
+    if (lang=="ENG") {
+      sessionStorage.setItem("language","RUS");
+      (capsLock) ? keys=keys6:keys=keys2;
+      updateKeys();
+    }else{
+      sessionStorage.setItem("language","ENG");
+      (capsLock) ? keys=keys5:keys=keys1;
+      updateKeys();
+    }
+    lang=sessionStorage.getItem("language");
+  }
+  
+    const updateKeys = () =>{
+    for (let i=0;i<64;i++){
+      let btn= document.getElementById(`key-${i}`);
+      btn.textContent=keys[i];
+      
+    }
+  }
+    const cloudUp = i =>{
+    if (i.length>1){return}
+    cloud.textContent=i;
+    cloud.style.opacity=0.6;
+    setTimeout(()=>cloud.style.opacity=0, 300)
+  }
+    const pressedCapsLock = () =>{
+    capsLock=!capsLock;
+    let btn=document.getElementById("key-29");
+    (capsLock)? btn.style.color="#bbeb11" : btn.style.color="#ffffff";
+    (capsLock)? ((lang=="ENG")? keys=keys5 : keys=keys6):((lang=="ENG")? keys=keys1 : keys=keys2)
+    updateKeys()
+    
+  }
+  
+  const backspaceDown = () =>{
+    let len= input.value.length;
+    input.value= input.value.slice(0,len-1);
+  }
+  const enterDown = () =>{
+    input.value+="\n"
+  }
+  const tabDown = () =>{
+    input.value+=`\t`
+  }
+  
+  /*const textareaFocus = () =>{
+    input.focus();
+    setTimeout(()=>textareaFocus(),100)
+  }*/
+  
+  const  arrowDown = (code) =>{
+  if (code==53){input.value+="↑"}
+  if (code==60){input.value+="←"}
+  if (code==61){input.value+="↓"}
+  if (code==62){input.value+="сссс"}
+  
+  }
+  
+  //    listen to the real keyboard
+  
+  document.addEventListener("keydown" , (e)=>realKeyDown(e.code,e));
+  
+  document.addEventListener("keyup" , (e)=>realKeyUp(e.code,e));
+  
+  
+  //   listen to  the virtual buttons 
+  
+  for(let i =0;i<64;i++){
+    let btn= document.getElementById(`key-${i}`);
+    btn.addEventListener("mousedown",()=>virtualKeyDown(i));
+    btn.addEventListener("mouseup",()=>virtualKeyUp(i));
+    btn.addEventListener("mouseout",()=>virtualKeyUp(i));
+  }
+  
+  //textareaFocus(); //    permanent textarea focus
+  
+  
