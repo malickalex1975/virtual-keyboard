@@ -12,7 +12,7 @@ const keys2=['ё','1','2','3','4','5','6','7','8','9','0','-','='
 
 const keys3=['~','!','@','#','$','%','^','&','*','(',')','_','+'
 ,'BackSpace','Tab','Q','W','E','R','T','Y','U','I','O','P','{','}',
-'|','DEL','Caps Lock','A','S','D','F','G','H','J','K','L',':','\"',
+'|','DEL','Caps Lock','A','S','D','F','G','H','J','K','L',':','"',
 'Enter','Shift','Z','X','C','V','B','N','M','<','>','?','↑','Shift',
 'Ctrl','Win','Alt',' ','Ctrl','←','↓','→','Alt'];
 
@@ -61,7 +61,6 @@ const keyCodes=['Backquote','Digit1','Digit2','Digit3','Digit4',
 let flagShiftDown=false;
 let capsLock=false;
 let keys;
-let ke;
 //    check last language setting
 let lang= sessionStorage.getItem("language");
 if(lang=="ENG"|| lang==undefined ||lang==null ){
@@ -104,23 +103,23 @@ document.body.append(cloud);
 //    create the  buttons
 
 for (let i=0;i<64;i++){
-  btn= document.createElement("div")
-  btn.id=`key-${i}`;
-  btn.className=`button key-${i}`
-  btn.textContent=keys[i];
+ let btn= document.createElement("div")
+ btn.id=`key-${i}`;
+ btn.className=`button key-${i}`
+ btn.textContent=keys[i];
   keyboard.append(btn);
 }
 const realKeyDown = (code,e) =>{
-    if(!keyCodes.includes(code)){return}; // if the key doesn't present on the virtual keyboard it doesn't work.
-    let keyNumber=keyCodes.indexOf(code);
+    if(!keyCodes.includes(code)){return} // if the key doesn't present on the virtual keyboard it doesn't work.
+    let keyNumber=keyCodes.indexOf(code)
     if(e.shiftKey  && e.altKey){setTimeout( ()=> changeLanguage(),10)}
     if(e.shiftKey  && !e.altKey){shiftDown();}
     if (code=="CapsLock"){pressedCapsLock();}
-    if (code=="ShiftLeft" || code=="ShiftRight"){shiftDown()};
-    if (code=="Backspace"){backspaceDown()};
-    if (code=="Enter"){enterDown()};
-    if (code=="Tab"){tabDown()};
-    keyDownAnimation(keyNumber);
+    if (code == "ShiftLeft" || code == "ShiftRight") { shiftDown();}
+    if (code == "Backspace") { backspaceDown();}
+    if (code == "Enter") { enterDown();}
+    if (code == "Tab") { tabDown();}
+    keyDownAnimation(keyNumber)
     print(keyNumber); 
   }
   
@@ -132,12 +131,12 @@ const realKeyDown = (code,e) =>{
   }
     const virtualKeyDown = code =>{
     keyDownAnimation(code);
-    if (code==42 || code==54){shiftDown()};
-    if (code==29){pressedCapsLock()};
-    if (code==13){backspaceDown()};
-    if (code==41){enterDown()};
-    if (code==14){tabDown()};
-    print(code);
+        if (code == 42 || code == 54) { shiftDown();}
+        if (code == 29) { pressedCapsLock();}
+        if (code == 13) { backspaceDown();}
+        if (code == 41) { enterDown();}
+        if (code == 14) { tabDown();}
+    print(code)
   }
   
     const virtualKeyUp = code =>{
@@ -233,18 +232,6 @@ const realKeyDown = (code,e) =>{
     input.value+=`\t`
   }
   
-  /*const textareaFocus = () =>{
-    input.focus();
-    setTimeout(()=>textareaFocus(),100)
-  }*/
-  
-  const  arrowDown = (code) =>{
-  if (code==53){input.value+="↑"}
-  if (code==60){input.value+="←"}
-  if (code==61){input.value+="↓"}
-  if (code==62){input.value+="→"}
-  
-  }
   
   //    listen to the real keyboard
   
@@ -272,6 +259,5 @@ const realKeyDown = (code,e) =>{
         virtualKeyUp(i)});
   }
   
-  //textareaFocus(); //    permanent textarea focus
   
   
