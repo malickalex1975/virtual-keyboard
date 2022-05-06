@@ -138,3 +138,234 @@ body{
     cursor: default;
 
 }
+.key-0{
+    grid-area: k0;
+}
+.key-1{
+    grid-area: k1;
+}
+.key-2{
+    grid-area: k2;
+}
+.key-3{
+    grid-area: k3;
+}
+.key-4{
+    grid-area: k4;
+}
+.key-5{
+    grid-area: k5;
+}
+.key-6{
+    grid-area: k6;
+}
+.key-7{
+    grid-area: k7;
+}
+.key-8{
+    grid-area: k8;
+}
+.key-9{
+    grid-area: k9;
+}
+.key-10{
+    grid-area: k10;
+}
+.key-11{
+    grid-area: k11;
+}
+.key-12{
+    grid-area: k12;
+}
+.key-13{
+    grid-area: k13;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-14{
+    grid-area: k14;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-15{
+    grid-area: k15;
+}
+.key-16{
+    grid-area: k16;
+}
+.key-17{
+    grid-area: k17;
+}
+.key-18{
+    grid-area: k18;
+}
+.key-19{
+    grid-area: k19;
+}
+.key-20{
+    grid-area: k20;
+}
+.key-21{
+    grid-area: k21;
+}
+.key-22{
+    grid-area: k22;
+}
+.key-23{
+    grid-area: k23;
+}
+.key-24{
+    grid-area: k24;
+}
+.key-25{
+    grid-area: k25;
+}
+.key-26{
+    grid-area: k26;
+}
+.key-27{
+    grid-area: k27;
+    width: 90px;
+    
+}
+
+.key-28{
+    grid-area: k28;
+    background-image: linear-gradient( #555555, #000000);
+    display: none;
+}
+.key-29{
+    grid-area: k29;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-30{
+    grid-area: k30;
+}
+.key-31{
+    grid-area: k31;
+}
+.key-32{
+    grid-area: k32;
+}
+.key-33{
+    grid-area: k33;
+}
+.key-34{
+    grid-area: k34;
+}
+.key-35{
+    grid-area: k35;
+}
+.key-36{
+    grid-area: k36;
+}
+.key-37{
+    grid-area: k37;
+}
+.key-38{
+    grid-area: k38;
+}
+.key-39{
+    grid-area: k39;
+}
+.key-40{
+    grid-area: k40;
+}
+.key-41{
+    grid-area: k41;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-41::after{
+    content:"  \21b5"
+}
+.key-42{
+    grid-area: k42;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-43{
+    grid-area: k43;
+}
+.key-44{
+    grid-area: k44;
+}
+.key-45{
+    grid-area: k45;
+}
+.key-46{
+    grid-area: k46;
+}
+.key-47{
+    grid-area: k47;
+}
+.key-48{
+    grid-area: k48;
+}
+.key-49{
+    grid-area: k49;
+}
+.key-50{
+    grid-area: k50;
+}
+.key-51{
+    grid-area: k51;
+}
+.key-52{
+    grid-area: k52;
+}
+.key-53{
+    grid-area: k53;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+
+.key-54{
+    grid-area: k54;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-55{
+    grid-area: k55;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-56{
+    grid-area: k56;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-57{
+    grid-area: k57;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-58{
+    grid-area: k58;
+    width:326px
+}
+.key-59{
+    grid-area: k59;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-60{
+    grid-area: k60;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-61{
+    grid-area: k61;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+.key-62{
+    grid-area: k62;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+
+.key-63{
+    grid-area: k63;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+.key-64{
+    grid-area: k64;
+    background-image: linear-gradient( #555555, #000000);
+}
