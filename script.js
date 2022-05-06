@@ -242,24 +242,34 @@ const realKeyDown = (code,e) =>{
   if (code==53){input.value+="↑"}
   if (code==60){input.value+="←"}
   if (code==61){input.value+="↓"}
-  if (code==62){input.value+="сссс"}
+  if (code==62){input.value+="→"}
   
   }
   
   //    listen to the real keyboard
   
-  document.addEventListener("keydown" , (e)=>realKeyDown(e.code,e));
+  document.addEventListener("keydown" , (e)=>{
+      e.preventDefault();
+      realKeyDown(e.code,e)});
   
-  document.addEventListener("keyup" , (e)=>realKeyUp(e.code,e));
+  document.addEventListener("keyup" , (e)=>{
+      e.preventDefault();
+      realKeyUp(e.code,e)});
   
   
   //   listen to  the virtual buttons 
   
   for(let i =0;i<64;i++){
     let btn= document.getElementById(`key-${i}`);
-    btn.addEventListener("mousedown",()=>virtualKeyDown(i));
-    btn.addEventListener("mouseup",()=>virtualKeyUp(i));
-    btn.addEventListener("mouseout",()=>virtualKeyUp(i));
+    btn.addEventListener("mousedown",(e)=>{
+        e.preventDefault();
+        virtualKeyDown(i)});
+    btn.addEventListener("mouseup",(e)=>{
+        e.preventDefault();
+        virtualKeyUp(i)});
+    btn.addEventListener("mouseout",(e)=>{
+         e.preventDefault();
+        virtualKeyUp(i)});
   }
   
   //textareaFocus(); //    permanent textarea focus
