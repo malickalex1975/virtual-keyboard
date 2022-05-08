@@ -89,7 +89,6 @@ input.className = 'text';
 input.id = 'text';
 input.setAttribute('placeholder', 'Try Virtual Keybord');
 divContainer.append(input);
-input.setAttribute('readonly', 'true');
 
 const keyboard = document.createElement('div');
 keyboard.className = 'keyboard';
@@ -283,3 +282,10 @@ for (let i = 0; i < 64; i += 1) {
     virtualKeyUp(i);
   });
 }
+
+function alwaysFocus() {
+  input.focus();
+  setTimeout(() => alwaysFocus(), 10);
+}
+
+alwaysFocus();
