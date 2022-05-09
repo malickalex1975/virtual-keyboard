@@ -81,7 +81,7 @@ document.body.append(information1);
 
 const information2 = document.createElement('p');
 information2.className = 'info';
-information2.textContent = ' Shift + Alt - переключение языка.';
+information2.textContent = ' LeftShift + LeftAlt - переключение языка.';
 document.body.append(information2);
 
 const input = document.createElement('textarea');
@@ -266,7 +266,6 @@ document.addEventListener('keyup', (e) => {
 });
 
 //   listen to  the virtual buttons
-
 for (let i = 0; i < 64; i += 1) {
   const btn = document.getElementById(`key-${i}`);
   btn.addEventListener('mousedown', (e) => {
