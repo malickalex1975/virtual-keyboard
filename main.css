@@ -1,0 +1,377 @@
+@keyframes textareaAnimation{
+    from{
+        top:130px;
+        opacity: 1;
+    }
+
+    to{
+        top:0px;
+        opacity:1;
+    }
+}
+@keyframes keyboardAnimation{
+    from{
+        top:-130px;
+        opacity: 1;
+    }
+
+    to{
+        top:0px;
+        opacity:1;
+    }
+}
+@keyframes bodyAnimation{
+    from {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    to{ 
+        background-color: #ffffff;
+    }
+}
+
+
+
+
+body{
+    animation: bodyAnimation 3s ;
+    background-color: #ffffff;
+}
+.container{
+    position: relative;
+    box-sizing: border-box;
+    width:820px;
+    height:520px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    overflow: hidden;
+    
+}
+
+.info{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2rem;
+
+}
+.text{
+    animation: textareaAnimation 2s ease-in-out;
+    position: relative;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 20px;
+    top:0px;
+    box-sizing: border-box;
+    width:720px;
+    height:200px;
+    font-size: 1.5rem;
+    background-color: #fce9c0;
+    padding: 10px;
+    border:3px solid #a9c358;
+    transition: 1ms;
+    box-shadow: 10px 5px 20px   rgba(0, 0, 0, 0.89);
+
+}
+
+
+
+.cloud{
+    position: absolute;
+    top:260px;
+    left:46%;
+    background-color: #cccccc;
+    width: 70px;
+    height:70px;
+    border-radius: 70px;
+    opacity: 0;
+    transition: 300ms;
+    text-align: center;
+    font-size: 3rem;
+    box-shadow: 5px 5px 20px   rgba(0, 0, 0, 0.95);
+}
+
+
+
+.keyboard{
+    position: relative;
+    animation: keyboardAnimation 2s ease-in-out;
+    width:710px;
+    height:240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 3px solid #101010;
+    border-radius:5px ;
+    background-color: aquamarine;
+    box-shadow: 10px 5px 30px   rgba(0, 0, 0, 0.99);
+    display: grid;
+    gap: 3px;
+    align-content: center;
+    justify-content: center;
+    grid-template-areas: 
+    "k0 k1 k2 k3 k4 k5 k6 k7 k8 k9 k10 k11 k12 k13 k13"
+    "k14 k15 k16 k17 k18 k19 k20 k21 k22 k23 k24 k25 k26 k27 k27"
+    "k29 k29 k30 k31 k32 k33 k34 k35 k36 k37 k38 k39 k40 k41 k41"
+    "k42 k42 k43 k44 k45 k46 k47 k48 k49 k50 k51 k52 k53 k54 k54"
+    "k55 k56 k57 k58 k58 k58 k58 k58 k58 k58 k59 k60 k61 k62 k63 "
+
+
+    ;
+    
+
+}
+
+.button{
+    width:44px;
+    height:34px;
+    border-radius: 5px;
+    background-image: linear-gradient( #888888, #222222);
+    color:#ffffff;
+    font-size: 1.15rem;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 10px;
+    transition: all 500ms;
+    user-select: none;
+    box-shadow: 3px 3px 20px   rgba(0, 0, 0, 0.89);
+    
+}
+.button:hover{
+    background-image: linear-gradient( #888888,  #354206);
+    transform: translateY(-3px) ;
+    cursor: default;
+
+}
+.key-0{
+    grid-area: k0;
+}
+.key-1{
+    grid-area: k1;
+}
+.key-2{
+    grid-area: k2;
+}
+.key-3{
+    grid-area: k3;
+}
+.key-4{
+    grid-area: k4;
+}
+.key-5{
+    grid-area: k5;
+}
+.key-6{
+    grid-area: k6;
+}
+.key-7{
+    grid-area: k7;
+}
+.key-8{
+    grid-area: k8;
+}
+.key-9{
+    grid-area: k9;
+}
+.key-10{
+    grid-area: k10;
+}
+.key-11{
+    grid-area: k11;
+}
+.key-12{
+    grid-area: k12;
+}
+.key-13{
+    grid-area: k13;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-14{
+    grid-area: k14;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-15{
+    grid-area: k15;
+}
+.key-16{
+    grid-area: k16;
+}
+.key-17{
+    grid-area: k17;
+}
+.key-18{
+    grid-area: k18;
+}
+.key-19{
+    grid-area: k19;
+}
+.key-20{
+    grid-area: k20;
+}
+.key-21{
+    grid-area: k21;
+}
+.key-22{
+    grid-area: k22;
+}
+.key-23{
+    grid-area: k23;
+}
+.key-24{
+    grid-area: k24;
+}
+.key-25{
+    grid-area: k25;
+}
+.key-26{
+    grid-area: k26;
+}
+.key-27{
+    grid-area: k27;
+    width: 90px;
+    
+}
+
+.key-28{
+    grid-area: k28;
+    background-image: linear-gradient( #555555, #000000);
+    display: none;
+}
+.key-29{
+    grid-area: k29;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-30{
+    grid-area: k30;
+}
+.key-31{
+    grid-area: k31;
+}
+.key-32{
+    grid-area: k32;
+}
+.key-33{
+    grid-area: k33;
+}
+.key-34{
+    grid-area: k34;
+}
+.key-35{
+    grid-area: k35;
+}
+.key-36{
+    grid-area: k36;
+}
+.key-37{
+    grid-area: k37;
+}
+.key-38{
+    grid-area: k38;
+}
+.key-39{
+    grid-area: k39;
+}
+.key-40{
+    grid-area: k40;
+}
+.key-41{
+    grid-area: k41;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-41::after{
+    content:"  \21b5"
+}
+.key-42{
+    grid-area: k42;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-43{
+    grid-area: k43;
+}
+.key-44{
+    grid-area: k44;
+}
+.key-45{
+    grid-area: k45;
+}
+.key-46{
+    grid-area: k46;
+}
+.key-47{
+    grid-area: k47;
+}
+.key-48{
+    grid-area: k48;
+}
+.key-49{
+    grid-area: k49;
+}
+.key-50{
+    grid-area: k50;
+}
+.key-51{
+    grid-area: k51;
+}
+.key-52{
+    grid-area: k52;
+}
+.key-53{
+    grid-area: k53;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+
+.key-54{
+    grid-area: k54;
+    width:90px;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-55{
+    grid-area: k55;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-56{
+    grid-area: k56;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-57{
+    grid-area: k57;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-58{
+    grid-area: k58;
+    width:326px
+}
+.key-59{
+    grid-area: k59;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-60{
+    grid-area: k60;
+    background-image: linear-gradient( #555555, #000000);
+}
+.key-61{
+    grid-area: k61;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+.key-62{
+    grid-area: k62;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+
+.key-63{
+    grid-area: k63;
+    background-image: linear-gradient( #555555, #000000);
+}
+
+.key-64{
+    grid-area: k64;
+    background-image: linear-gradient( #555555, #000000);
+}
